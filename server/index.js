@@ -11,12 +11,13 @@ require("dotenv").config();
 const PORT = process.env.PORT;
 
 const corsOptions = {
-    origin: "https://connecto-chatapp-client.vercel.app", // Allow frontend URL
-    credentials: true, // Allow cookies and auth headers
-    methods: ["GET", "POST", "PUT", "DELETE"], // Allowed HTTP methods
-    allowedHeaders: ["Content-Type", "Authorization"], // Allowed headers
+    origin: "*", // Allow all origins (or replace with frontend URL if needed)
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
+    allowedHeaders: "*", // ✅ Allow all headers
 };
 
+// Apply CORS middleware
 app.use(cors(corsOptions));
 
 
@@ -39,7 +40,7 @@ const server = app.listen(PORT,()=>{
 
 const io = socket(server,{
     cors:{
-        origin: "http://localhost:5173",
+        origin: "*",
         credentials: true,
     }
 })
