@@ -26,6 +26,8 @@ app.use(express.json());
 app.use('/api/auth',userRoutes)
 app.use('/api/messages',messageRoutes)
 
+app.options("*", cors(corsOptions));
+
 mongoose.connect(process.env.MONGO_URL,{ 
 }).then(()=>{
     console.log(`DB connection successful`);
