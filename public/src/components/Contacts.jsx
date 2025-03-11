@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import Logo from '../assets/logo.png';
 import { FaSearch } from "react-icons/fa";
+import defaultAvatar from '../assets/default.png';
+
 
 function Contacts({ contacts, currentUser, changeChat }) {
     const [currentUsername, setCurrentUsername] = useState("");
