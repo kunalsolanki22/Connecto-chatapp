@@ -8,7 +8,7 @@ const app = express();
 const socket = require("socket.io");
 
 require("dotenv").config();
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 5000;
 
 const corsOptions = {
     origin: "*", // Allow all origins (or replace with frontend URL if needed)
